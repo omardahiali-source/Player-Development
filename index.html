@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Player Development</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            ⚽ Player Development
+        </div>
+
+        <nav>
+            <button class="nav-button active" data-page="dashboardPage">
+                🏠 Dashboard
+            </button>
+
+            <button class="nav-button" data-page="schedulePage">
+                📅 Schedule
+            </button>
+
+            <button class="nav-button" data-page="trainingPage">
+                ⚽ Training
+            </button>
+
+            <button class="nav-button" data-page="progressPage">
+                📈 Progress
+            </button>
+
+            <button class="nav-button" data-page="recoveryPage">
+                😴 Recovery
+            </button>
+
+            <button class="nav-button" data-page="goalsPage">
+                🎯 Goals
+            </button>
+        </nav>
+    </aside>
+
+
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <section id="dashboardPage" class="page">
+
+            <div class="topbar">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back, Player 👋</p>
+                </div>
+
+                <div class="profile-circle">
+                    P
+                </div>
+            </div>
+
+
+            <!-- STATS -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-number" id="totalHours">0.0</div>
+                    <div class="stat-label">Total Training Hours</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⚽</div>
+                    <div class="stat-number" id="teamHours">0.0</div>
+                    <div class="stat-label">Team Training</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number" id="individualHours">0.0</div>
+                    <div class="stat-label">Individual Training</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">😴</div>
+                    <div class="stat-number" id="recoveryHours">0.0</div>
+                    <div class="stat-label">Recovery Hours</div>
+                </div>
+
+            </div>
+
+
+            <!-- TODAY -->
+            <section class="panel">
+                <div class="panel-header">
+                    <h2>Today's Training</h2>
+                    <button class="add-button">+ Add</button>
+                </div>
+
+                <div id="todayTraining">
+                    <p>No training scheduled yet.</p>
+                </div>
+            </section>
+
+
+            <!-- WEEKLY PLAN -->
+            <section class="panel">
+
+                <div class="panel-header">
+                    <h2>Weekly Training Plan</h2>
+                </div>
+
+                <div class="training-plan">
+
+                    <div class="training-plan-item">
+                        <strong>Technical</strong>
+                        <span>0 / 3 sessions</span>
+                    </div>
+
+                    <div class="training-plan-item">
+                        <strong>Strength</strong>
+                        <span>0 / 2 sessions</span>
+                    </div>
+
+                    <div class="training-plan-item">
+                        <strong>Plyometrics</strong>
+                        <span>0 / 1 session</span>
+                    </div>
+
+                    <div class="training-plan-item">
+                        <strong>Analysis</strong>
+                        <span>0 / 1 session</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RECOVERY -->
+            <section class="panel">
+
+                <div class="panel-header">
+                    <h2>Recovery</h2>
+                </div>
+
+                <div class="recovery-box">
+                    <strong>Recovery is part of training.</strong>
+                    <p>
+                        Track your sleep, rest, stretching, mobility,
+                        and other recovery activities.
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- GOALS -->
+            <section class="panel">
+
+                <div class="panel-header">
+                    <h2>Goals</h2>
+                </div>
+
+                <div class="goals-box">
+                    <p>No goals added yet.</p>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- SCHEDULE -->
+        <section id="schedulePage" class="page hidden">
+
+            <div class="topbar">
+                <div>
+                    <h1>Schedule</h1>
+                    <p>Customize your weekly training schedule.</p>
+                </div>
+            </div>
+
+
+            <section class="panel">
+
+                <div class="panel-header">
+                    <h2>Schedule Settings</h2>
+
+                    <button id="resetSchedule" class="save-button">
+                        Reset to Default
+                    </button>
+                </div>
+
+                <p class="schedule-description">
+                    Change the start and end times for your training sessions.
+                    Your schedule will be saved on this device.
+                </p>
+
+                <div id="scheduleEditor"></div>
+
+                <button id="saveSchedule" class="save-button">
+                    Save Schedule
+                </button>
+
+                <span id="saveMessage" class="save-message"></span>
+
+            </section>
+
+        </section>
+
+
+        <!-- TRAINING -->
+        <section id="trainingPage" class="page hidden">
+
+            <div class="topbar">
+                <div>
+                    <h1>Training</h1>
+                    <p>Track your individual development.</p>
+                </div>
+            </div>
+
+            <section class="panel">
+                <h2>Training</h2>
+                <p>Your training tools will appear here.</p>
+            </section>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+        <section id="progressPage" class="page hidden">
+
+            <div class="topbar">
+                <div>
+                    <h1>Progress</h1>
+                    <p>See how your development is progressing.</p>
+                </div>
+            </div>
+
+            <section class="panel">
+                <h2>Progress</h2>
+                <p>Your progress tracking will appear here.</p>
+            </section>
+
+        </section>
+
+
+        <!-- RECOVERY -->
+        <section id="recoveryPage" class="page hidden">
+
+            <div class="topbar">
+                <div>
+                    <h1>Recovery</h1>
+                    <p>Track your recovery and rest.</p>
+                </div>
+            </div>
+
+            <section class="panel">
+                <h2>Recovery</h2>
+                <p>Your recovery tracking will appear here.</p>
+            </section>
+
+        </section>
+
+
+        <!-- GOALS -->
+        <section id="goalsPage" class="page hidden">
+
+            <div class="topbar">
+                <div>
+                    <h1>Goals</h1>
+                    <p>Set and track your development goals.</p>
+                </div>
+            </div>
+
+            <section class="panel">
+                <h2>Goals</h2>
+                <p>Your goals will appear here.</p>
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6f8;
+    color: #151515;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 240px;
+    height: 100vh;
+
+    background: #111;
+    color: white;
+
+    padding: 25px 15px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    background: transparent;
+    color: #aaa;
+
+    border: none;
+    text-align: left;
+
+    padding: 13px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background: #222;
+    color: white;
+}
+
+.nav-item.active {
+    background: #333;
+    color: white;
+}
+
+
+/* MAIN */
+
+.main {
+    margin-left: 240px;
+    padding: 35px;
+    max-width: 1400px;
+}
+
+
+/* TOP BAR */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.topbar h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.topbar p {
+    color: #777;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #111;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+
+/* SECTIONS */
+
+section {
+    margin-bottom: 25px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+}
+
+
+/* STATISTICS */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.stat-card {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card span {
+    font-size: 22px;
+}
+
+.stat-card h3 {
+    font-size: 30px;
+    margin-top: 12px;
+}
+
+.stat-card p {
+    color: #777;
+    margin-top: 4px;
+}
+
+
+/* PANELS */
+
+.panel {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* TRAINING */
+
+.training-item {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.training-item:last-child {
+    border-bottom: none;
+}
+
+.training-time {
+    width: 75px;
+}
+
+.training-info {
+    flex: 1;
+}
+
+.training-info p {
+    color: #888;
+
+    margin-top: 4px;
+
+    font-size: 14px;
+}
+
+.duration {
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* BUTTONS */
+
+.small-button {
+    border: none;
+
+    background: #111;
+
+    color: white;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.small-button:hover {
+    opacity: 0.8;
+}
+
+
+/* RECOVERY */
+
+.recovery-item {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.recovery-item:last-child {
+    border-bottom: none;
+}
+
+.recovery-item p {
+    color: #888;
+
+    margin-top: 4px;
+
+    font-size: 14px;
+}
+
+
+/* GOALS */
+
+.goal {
+    margin-bottom: 25px;
+}
+
+.goal:last-child {
+    margin-bottom: 0;
+}
+
+.goal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.goal-header span {
+    color: #777;
+}
+
+.progress {
+    width: 100%;
+
+    height: 9px;
+
+    background: #eee;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+
+    background: #111;
+
+    border-radius: 10px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 70px;
+    }
+
+    .logo {
+        font-size: 0;
+    }
+
+    .logo:first-letter {
+        font-size: 25px;
+    }
+
+    .nav-item {
+        font-size: 0;
+        text-align: center;
+    }
+
+    .main {
+        margin-left: 70px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .main {
+        padding: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+        font-size: 26px;
+    }
+}/* ========================================
+   SCHEDULE PAGE
+======================================== */
+
+.page.hidden {
+    display: none;
+}
+
+.schedule-description {
+    color: #777;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+
+/* Each day */
+
+.schedule-day {
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+}
+
+.schedule-day:last-child {
+    border-bottom: none;
+}
+
+.schedule-day h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
+/* Each session */
+
+.schedule-row {
+    display: grid;
+
+    grid-template-columns: 1fr 150px 150px;
+
+    gap: 20px;
+
+    align-items: end;
+
+    padding: 12px 0;
+}
+
+.schedule-session-name {
+    min-width: 0;
+}
+
+.schedule-row label {
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 5px;
+}
+
+.schedule-row input {
+    width: 100%;
+
+    padding: 9px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+/* Save button */
+
+.save-button {
+    border: none;
+
+    background: #111;
+
+    color: white;
+
+    padding: 11px 18px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    margin-top: 25px;
+
+    font-size: 14px;
+}
+
+.save-button:hover {
+    opacity: 0.8;
+}
+
+
+/* Save message */
+
+.save-message {
+    display: inline-block;
+
+    margin-left: 15px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+/* Training plan */
+
+.training-plan-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.training-plan-item:last-child {
+    border-bottom: none;
+}
+
+.training-plan-item span {
+    color: #777;
+}
+
+
+/* Mobile schedule */
+
+@media (max-width: 700px) {
+
+    .schedule-row {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .schedule-session-name {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .schedule-row {
+        grid-template-columns: 1fr;
+    }
+
+}
