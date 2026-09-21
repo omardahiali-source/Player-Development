@@ -511,4 +511,10 @@ section {
         grid-template-columns: 1fr;
     }
 
+}@media (max-width: 600px) {
+    .nav-button {
+        font-size: 13px;
+        padding: 10px 6px;
+        white-space: nowrap;
+    }
 }
