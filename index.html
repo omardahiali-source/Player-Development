@@ -24,7 +24,11 @@
             <button class="nav-button" data-page="schedulePage">
                 📅 Schedule
             </button>
-
+           
+            <button class="nav-button" data-page="calendarPage">
+                🗓️ Calendar
+            </button>
+            
             <button class="nav-button" data-page="trainingPage">
                 ⚽ Training
             </button>
@@ -209,8 +213,28 @@
             </section>
 
         </section>
+<!-- CALENDAR -->
+<section id="calendarPage" class="page hidden">
 
+    <div class="topbar">
+        <div>
+            <h1>Calendar</h1>
+            <p>See what you have scheduled for each day.</p>
+        </div>
+    </div>
 
+    <section class="panel">
+
+        <div class="panel-header">
+            <h2>Upcoming Training</h2>
+        </div>
+
+        <div id="calendarSchedule"></div>
+
+    </section>
+
+</section>
+        
         <!-- TRAINING -->
         <section id="trainingPage" class="page hidden">
 
