@@ -187,10 +187,14 @@ function setupNavigation() {
 
             button.classList.add("active");
 
-            if (pageId === "schedulePage") {
-                renderScheduleEditor();
-            }
+if (pageId === "schedulePage") {
+    renderScheduleEditor();
+}
 
+if (pageId === "calendarPage") {
+    renderCalendar();
+}
+            
         });
 
     });
@@ -386,6 +390,64 @@ function setupScheduleButtons() {
 }
 
 
+function renderCalendar() {
+
+    const calendar =
+        document.getElementById("calendarSchedule");
+
+    if (!calendar) {
+        return;
+    }
+
+    calendar.innerHTML = "";
+
+    Object.keys(schedule).forEach(day => {
+
+        const dayContainer =
+            document.createElement("div");
+
+        dayContainer.className = "schedule-day";
+
+        const heading =
+            document.createElement("h3");
+
+        heading.textContent = day;
+
+        dayContainer.appendChild(heading);
+
+        schedule[day].forEach(session => {
+
+            const row =
+                document.createElement("div");
+
+            row.className = "schedule-row";
+
+            const name =
+                document.createElement("div");
+
+            name.className = "schedule-session-name";
+
+            name.innerHTML =
+                `<strong>${session.type}</strong>`;
+
+            const time =
+                document.createElement("div");
+
+            time.textContent =
+                `${session.start} – ${session.end}`;
+
+            row.appendChild(name);
+            row.appendChild(time);
+
+            dayContainer.appendChild(row);
+
+        });
+
+        calendar.appendChild(dayContainer);
+
+    });
+
+}
 function startApp() {
 
     setupNavigation();
@@ -394,9 +456,10 @@ function startApp() {
 
     renderScheduleEditor();
 
+    renderCalendar();
+
     updateDashboard();
 
 }
-
 
 startApp();
