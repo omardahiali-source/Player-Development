@@ -192,9 +192,12 @@ if (pageId === "schedulePage") {
 }
 
 if (pageId === "calendarPage") {
-    renderCalendar();
+    const calendar = document.getElementById("calendarSchedule");
+
+    if (calendar) {
+        renderCalendar();
+    }
 }
-            
         });
 
     });
