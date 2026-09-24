@@ -398,8 +398,6 @@ function renderCalendar() {
         document.getElementById("calendarSchedule");
     if (!calendar) {
         return;
-        time.textContent =
-    `${formatTime(session.start)} – ${formatTime(session.end)}`;
     }
 
     calendar.innerHTML = "";
@@ -436,7 +434,7 @@ function renderCalendar() {
             const time =
                 document.createElement("div");
 
-            time.textContent =
+           time.textContent =
     `${formatTime(session.start)} – ${formatTime(session.end)}`;
             
             row.appendChild(name);
