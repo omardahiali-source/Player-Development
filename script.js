@@ -391,7 +391,20 @@ function setupScheduleButtons() {
     }
 
 }
+function formatTime(time) {
+    const [hours, minutes] = time.split(":");
+    let hour = Number(hours);
 
+    const period = hour >= 12 ? "PM" : "AM";
+
+    if (hour === 0) {
+        hour = 12;
+    } else if (hour > 12) {
+        hour -= 12;
+    }
+
+    return `${hour}:${minutes} ${period}`;
+}
 
 function renderCalendar() {
 
@@ -437,8 +450,8 @@ function renderCalendar() {
                 document.createElement("div");
 
             time.textContent =
-                `${session.start} – ${session.end}`;
-
+    `${formatTime(session.start)} – ${formatTime(session.end)}`;
+            
             row.appendChild(name);
             row.appendChild(time);
 
